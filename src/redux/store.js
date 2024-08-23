@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-import { takeEvery, put } from 'redux-saga/effects';
+import { takeEvery,takeLatest, put } from 'redux-saga/effects';
 import axios from 'axios';
 
 // Create the rootSaga generator function
@@ -13,6 +13,7 @@ function* rootSaga() {
 
 function* fetchAllMovies() {
   try {
+    console.log('in fetchAllMovies')
     // Get the movies:
     const moviesResponse = yield axios.get('/api/movies');
     // Set the value of the movies reducer:
@@ -26,8 +27,12 @@ function* fetchAllMovies() {
 }
 
 //getMovieDetails generator function goes here
+function* getMovieDetails (action) {
+  console.log('in getMovieDetials generator function: ', action.payload)
 // sends axios.get request using id for specific movie as a param
 // put setsMovieDetails reducer with the response
+}
+
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
