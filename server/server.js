@@ -11,7 +11,8 @@ app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
 app.use('/api/movies', movieRouter);
-app.use('/api/genres', genreRouter)
+app.use('/api/genres', genreRouter);
+app.use('/api/details', genreRouter)
 
 /** ---------- START SERVER ---------- **/
 app.listen(PORT, () => {
