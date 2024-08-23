@@ -10,6 +10,10 @@ function MovieList() {
   useEffect(() => {
     dispatch({ type: 'FETCH_MOVIES' });
   }, []);
+  
+  // onClick function goes here
+  // dispatch 'GET_MOVIE_DETAILS'
+  // payload: movie id
 
   return (
     <main>
@@ -19,7 +23,11 @@ function MovieList() {
           return (
             <div data-testid='movieItem' key={movie.id}>
               <h3>{movie.title}</h3>
-              <img src={movie.poster} alt={movie.title}/>
+              <img 
+              data-testid="toDetails" 
+              // onClick
+              src={movie.poster} 
+              alt={movie.title}/>
             </div>
           );
         })}
