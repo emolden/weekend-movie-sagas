@@ -12,8 +12,16 @@ function MovieList() {
   }, []);
   
   // onClick function goes here
-  // dispatch 'GET_MOVIE_DETAILS'
+  const handleClickedImg = (id) => {
+    console.log ('movie id is: ', id);
+   // dispatch 'GET_MOVIE_DETAILS'
+   dispatch({
+    type: 'GET_MOVIE_DETAILS',
+    payload: id
+   })
   // payload: movie id
+  }
+ 
 
   return (
     <main>
@@ -25,7 +33,7 @@ function MovieList() {
               <h3>{movie.title}</h3>
               <img 
               data-testid="toDetails" 
-              // onClick
+              onClick= {function(){handleClickedImg(movie.id)}}
               src={movie.poster} 
               alt={movie.title}/>
             </div>
