@@ -7,7 +7,8 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
   yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-  //yield 'GET_MOVIE_DETAILS', getMovieDetails
+  //'GET_MOVIE_DETAILS' yield goes here
+  yield takeLatest('GET_MOVIE_DETAILS', getMovieDetails)
 }
 
 function* fetchAllMovies() {
