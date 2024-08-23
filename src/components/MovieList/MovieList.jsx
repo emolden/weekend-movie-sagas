@@ -14,9 +14,14 @@ function MovieList() {
   // onClick function goes here
   const handleClickedImg = (id) => {
     console.log ('movie id is: ', id);
-  }
-  // dispatch 'GET_MOVIE_DETAILS'
+   // dispatch 'GET_MOVIE_DETAILS'
+   dispatch({
+    type: 'GET_MOVIE_DETAILS',
+    payload: id
+   })
   // payload: movie id
+  }
+ 
 
   return (
     <main>
