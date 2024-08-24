@@ -62,9 +62,26 @@ const movies = (state = [], action) => {
 // reorganize data to be nice for the client
 // maybe: {title: , img: , description: , genres: []}
 
-const singleMovieDetails = (state = [], action) => {
+const singleMovieDetails = (state = {}, action) => {
   if(action.type === 'SET_SINGLE_MOVIE_DETAILS') {
-    console.log ('in movieDetials reducer the payload is: ', action.payload)
+    //action.payload is an array of objects. The number of objects is equal to the number
+    // of genres a given movie has.
+    console.log ('in movieDetials reducer the payload is: ', action.payload);
+    // refactor to remove redundant information
+    let prettyMovieObject = {
+      movieId: action.payload[0].movie_id,
+      movieTitle: action.payload[0].title,
+      poster: action.payload[0].poster,
+      description: action.payload[0].description,
+      movieGenres: action.payload.map(genre => {
+        return (
+          {genre_id: genre.genre_id,
+          genre_name: genre.genre_name}
+        )
+      })
+    }
+    console.log(prettyMovieObject);
+    return prettyMovieObject;
   }
   return state;
 }
