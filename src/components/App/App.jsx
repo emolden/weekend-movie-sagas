@@ -7,11 +7,12 @@ function App() {
   return (
     <div className="App">
       <h1>The Movies Saga!</h1>
-      <Router>        
+      <Router> 
+        {/* MovieList page has all movie titles with their poster */}       
         <Route path="/" exact>
           <MovieList />
         </Route>
-        {/* Details page */}
+        {/* MovieDetails page has the title, poster, description, and genres for one selected movie */}
         <Route path='/details' exact>
           <MovieDetails />
         </Route>

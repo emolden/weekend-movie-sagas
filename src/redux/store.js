@@ -13,7 +13,7 @@ function* rootSaga() {
 
 function* fetchAllMovies() {
   try {
-    console.log('in fetchAllMovies')
+    // console.log('in fetchAllMovies')
     // Get the movies:
     const moviesResponse = yield axios.get('/api/movies');
     // Set the value of the movies reducer:
@@ -29,11 +29,11 @@ function* fetchAllMovies() {
 //getMovieDetails generator function goes here
 function* getMovieDetails (action) {
   try{
-    console.log('in getMovieDetials generator function: ', action.payload)
+    // console.log('in getMovieDetials generator function: ', action.payload)
   // sends axios.get request using id for specific movie as a param
     const movieDetailsResponse = yield axios.get(`/api/details?q=${action.payload}`);
   // put setsMovieDetails reducer with the response
-  console.log('in getMovieDetails the response is: ', movieDetailsResponse.data)
+  // console.log('in getMovieDetails the response is: ', movieDetailsResponse.data)
     yield put({
       type: 'SET_SINGLE_MOVIE_DETAILS',
       payload: movieDetailsResponse.data
@@ -49,7 +49,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
-  console.log('in movies reducer the payload is: ', action.payload);
+  // console.log('in movies reducer the payload is: ', action.payload);
   switch (action.type) {
     case 'SET_MOVIES':
       return action.payload;
@@ -66,7 +66,7 @@ const singleMovieDetails = (state = {}, action) => {
   if(action.type === 'SET_SINGLE_MOVIE_DETAILS') {
     //action.payload is an array of objects. The number of objects is equal to the number
     // of genres a given movie has.
-    console.log ('in movieDetials reducer the payload is: ', action.payload);
+    // console.log ('in movieDetials reducer the payload is: ', action.payload);
     // refactor to remove redundant information
     let prettyMovieObject = {
       movieId: action.payload[0].movie_id,
@@ -80,8 +80,11 @@ const singleMovieDetails = (state = {}, action) => {
         )
       })
     }
-    console.log(prettyMovieObject);
+    // console.log(prettyMovieObject);
     return prettyMovieObject;
+  }
+  else if (action.type === 'RESET_MOVIE_DETAILS') {
+    return action.payload;
   }
   return state;
 }
