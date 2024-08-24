@@ -28,9 +28,14 @@ function* fetchAllMovies() {
 
 //getMovieDetails generator function goes here
 function* getMovieDetails (action) {
-  console.log('in getMovieDetials generator function: ', action.payload)
-// sends axios.get request using id for specific movie as a param
-// put setsMovieDetails reducer with the response
+  try{
+    console.log('in getMovieDetials generator function: ', action.payload)
+  // sends axios.get request using id for specific movie as a param
+    const movieDetailsResponse = yield axios.get(`/api/details?q=${action.payload}`);
+  // put setsMovieDetails reducer with the response
+  } catch(error) {
+    console.log('getMovieDetails error: ', error);
+  }
 }
 
 
