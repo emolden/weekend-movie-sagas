@@ -7,11 +7,24 @@ router.get('/', (req, res) => {
     // Add query to specific movie and genres
     // query will use a JOIN to get all genres for a specific movie id
     const query = `
-    SELECT * FROM "movies"
-      ORDER BY "title" ASC;
+        SELECT 
+            "movies_genres"."genre_id",
+            "genres"."name" AS "genre_name",
+            "movies_genres"."movie_id",
+            "movies"."title",
+            "movies"."poster",
+            "movies"."description"
+            FROM "genres"
+            JOIN "movies_genres"
+                ON "genres"."id" = "movies_genres"."genre_id"
+            JOIN "movies"
+                ON "movies_genres"."movie_id" = "movies"."id"
+            WHERE "movies"."id" = $1;
   `;
-  pool.query(query)
+  const queryVariables = [req.query.q];
+  pool.query(query, queryVariables)
   .then(result => {
+    console.log('result from database: ', result.rows);
     res.send(result.rows);
   })
   .catch(err => {
