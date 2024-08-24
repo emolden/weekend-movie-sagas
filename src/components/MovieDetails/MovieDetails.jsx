@@ -1,20 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import './MovieDetails.css';
 
 function MovieDetails () {
+
+    const history = useHistory();
     //useSelector to get movieDetails reducer info
     const singleMovieDetails = useSelector(store => store.singleMovieDetails);
 
+    const backToMovieList = () => {
+        history.push('/');
+    }
 
-    return (
-        
-        <div data-testid="movieDetails">
-            <header>
-               <h1>Movie Details</h1> 
-            </header>
-            {/* render specific movie details on the page
-            use .map to get all genres to display */}
+    const waitTillMovieDetailsReady =() => {
+        return(
+        <>
             <section>
                 <div>
                     <h1>{singleMovieDetails.movieTitle}</h1>
@@ -31,8 +32,18 @@ function MovieDetails () {
                     <p>{singleMovieDetails.description}</p>
                 </div>
             </section>
+            </>
+        )
+    }
 
-            <button data-testid="toList">Back to Movie List</button>
+    return (
+        
+        <div data-testid="movieDetails">
+            <header>
+               <h1>Movie Details</h1> 
+            </header>
+            {Object.keys(singleMovieDetails).length > 0 ? waitTillMovieDetailsReady() : ''}
+            <button data-testid="toList" onClick={backToMovieList}>Back to Movie List</button>
         </div>
     )
 
