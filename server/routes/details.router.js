@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
   const queryVariables = [req.query.q];
   pool.query(query, queryVariables)
   .then(result => {
-    console.log('result from database: ', result.rows);
+    // console.log('result from database: ', result.rows);
     res.send(result.rows);
   })
   .catch(err => {

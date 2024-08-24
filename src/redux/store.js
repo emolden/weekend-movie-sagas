@@ -33,6 +33,11 @@ function* getMovieDetails (action) {
   // sends axios.get request using id for specific movie as a param
     const movieDetailsResponse = yield axios.get(`/api/details?q=${action.payload}`);
   // put setsMovieDetails reducer with the response
+  console.log('in getMovieDetails the response is: ', movieDetailsResponse.data)
+    yield put({
+      type: 'SET_SINGLE_MOVIE_DETAILS',
+      payload: movieDetailsResponse.data
+    });
   } catch(error) {
     console.log('getMovieDetails error: ', error);
   }
@@ -44,6 +49,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
+  console.log('in movies reducer the payload is: ', action.payload);
   switch (action.type) {
     case 'SET_MOVIES':
       return action.payload;
@@ -55,6 +61,13 @@ const movies = (state = [], action) => {
 //put movieDetials reducer here
 // reorganize data to be nice for the client
 // maybe: {title: , img: , description: , genres: []}
+
+const singleMovieDetails = (state = [], action) => {
+  if(action.type === 'SET_SINGLE_MOVIE_DETAILS') {
+    console.log ('in movieDetials reducer the payload is: ', action.payload)
+  }
+  return state;
+}
 
 // Used to store the movie genres
 const genres = (state = [], action) => {
@@ -71,7 +84,7 @@ const storeInstance = createStore(
   combineReducers({
     movies,
     genres,
-    //movieDetails
+    singleMovieDetails
   }),
   // Add sagaMiddleware to our store
   applyMiddleware(sagaMiddleware, logger),
