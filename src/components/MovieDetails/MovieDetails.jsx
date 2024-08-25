@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import './MovieDetails.css';
+// import './MovieDetails.css';
 
 function MovieDetails () {
 
@@ -30,10 +30,10 @@ function MovieDetails () {
     const waitTillMovieDetailsReady =() => {
         return(
         <>
-            <section>
-                <div>
+            <section class='flex flex-row gap-20'>
+                <div class='flex flex-col '>
                     <h1>{singleMovieDetails.movieTitle}</h1>
-                    <img src={singleMovieDetails.poster} />
+                    <img class='max-w-20'src={singleMovieDetails.poster} />
                 </div>
                 <div>
                     <div>
@@ -54,7 +54,7 @@ function MovieDetails () {
         
         <div data-testid="movieDetails">
             <header>
-               <h1>Movie Details</h1> 
+               <h1 class='text-2xl'>Movie Details</h1> 
             </header>
             {/* forces page load to wait till redux-saga has time to fill
             singleMovieDetails */}
