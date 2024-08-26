@@ -22,12 +22,9 @@ function MovieList() {
     // console.log ('movie id is: ', id);
     // payload: movie id
    // dispatch 'GET_MOVIE_DETAILS' sends the clicked movie id to the store
-   dispatch({
-    type: 'GET_MOVIE_DETAILS',
-    payload: id
-   })
+   
   //sends the user to the details page after a specific movie is clicked
-  history.push('/details');
+  history.push(`/details/${id}`);
   }
  
 
