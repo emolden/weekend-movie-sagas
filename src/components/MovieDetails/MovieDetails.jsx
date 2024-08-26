@@ -1,12 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 // import './MovieDetails.css';
 
 function MovieDetails () {
-
+    const params = useParams();
     const history = useHistory();
     const dispatch = useDispatch();
+
+    useEffect (() => {
+        dispatch({
+            type: 'GET_MOVIE_DETAILS',
+            payload: params.id
+       })
+    })
+       
 
     //useSelector to get movieDetails reducer info
     //singleMovieDetials is an object

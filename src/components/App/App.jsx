@@ -13,7 +13,7 @@ function App() {
           <MovieList />
         </Route>
         {/* MovieDetails page has the title, poster, description, and genres for one selected movie */}
-        <Route path='/details' exact>
+        <Route path='/details/:id' exact>
           <MovieDetails />
         </Route>
 
