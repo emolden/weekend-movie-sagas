@@ -31,15 +31,15 @@ function MovieDetails () {
         return(
         <>
             <section class='flex flex-row gap-20'>
-                <div class='flex flex-col '>
-                    <h1>{singleMovieDetails.movieTitle}</h1>
-                    <img class='max-w-20'src={singleMovieDetails.poster} />
+                <div class='flex flex-col justify-center ml-10 w-52 h-80 '>
+                    <h1 class='text-center text-1xl font-semibold tracking-wider flex flex-wrap justify-center'>{singleMovieDetails.movieTitle}</h1>
+                    <img class='w-max h-full text-center'src={singleMovieDetails.poster} />
                 </div>
-                <div>
-                    <div>
+                <div class= 'max-w-2xl flex justify-center flex-col'>
+                    <div class='ml-16 mb-6 flex flex-row gap-5'>
                         {singleMovieDetails.movieGenres.map(genre => {
                             return (
-                                <p key={genre.genre_id}>{genre.genre_name}</p>
+                                <p class ='boarder-solid border-2 rounded-lg p-1 border-blue-900 bg-blue-300' key={genre.genre_id}>{genre.genre_name}</p>
                             )
                         })}
                     </div>
@@ -54,12 +54,19 @@ function MovieDetails () {
         
         <div data-testid="movieDetails">
             <header>
-               <h1 class='text-2xl'>Movie Details</h1> 
+               <h1 class='text-7xl py-16 pl-5'>Movie Details</h1> 
             </header>
             {/* forces page load to wait till redux-saga has time to fill
             singleMovieDetails */}
             {Object.keys(singleMovieDetails).length > 0 ? waitTillMovieDetailsReady() : ''}
-            <button data-testid="toList" onClick={backToMovieList}>Back to Movie List</button>
+            <div >
+                <button 
+                    data-testid="toList" 
+                    onClick={backToMovieList}
+                    class='mt-10 mb-10 ml-10 p-3 bg-gray-300 rounded-lg border-solid border-2 border-black cursor-pointer'>
+                    Back to Movie List
+                </button>
+            </div>
         </div>
     )
 

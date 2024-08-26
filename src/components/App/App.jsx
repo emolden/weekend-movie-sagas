@@ -6,7 +6,7 @@ import MovieDetails from '../MovieDetails/MovieDetails';
 function App() {
   return (
     <div className="App">
-      <h1 class="text-3xl text-center font-bold underline bg-blue-900 text-white max-h-30">The Movies Saga!</h1>
+      <h1 class="text-3xl text-center font-bold underline bg-blue-900 text-white max-h-30 py-8">The Movies Saga!</h1>
       <Router> 
         {/* MovieList page has all movie titles with their poster */}       
         <Route path="/" exact>

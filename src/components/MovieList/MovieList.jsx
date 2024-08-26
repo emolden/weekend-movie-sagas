@@ -33,17 +33,19 @@ function MovieList() {
 
   return (
     <main>
-      <h1 class='text-2xl'>MovieList</h1>
-      <section class='flex flex-row flex-wrap gap-8 border-black'>
+      <h1 class='text-7xl mt-16 ml-10'>MovieList</h1>
+      <h4 class='ml-10 mt-3'>Click on a movie poster to see details!</h4>
+      <section class='flex flex-row flex-wrap mx-10 mb-10 gap-16 border-black'>
         {movies.map(movie => {
           return (
-            <div data-testid='movieItem'  key={movie.id}>
-              <h3 class='text-center text-1xl font-semibold flex flex-wrap justify-center'>{movie.title}</h3>
+            <div data-testid='movieItem' class='w-72 h-96 p-10' key={movie.id}>
+              <h3 class='text-center text-1xl font-semibold tracking-wider flex flex-wrap justify-center'>{movie.title}</h3>
               <img 
               data-testid="toDetails" 
               onClick= {function(){handleClickedImg(movie.id)}}
               src={movie.poster} 
-              alt={movie.title}/>
+              alt={movie.title}
+              class='w-full h-full cursor-pointer'/>
             </div>
           );
         })}
