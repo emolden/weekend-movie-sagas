@@ -21,9 +21,11 @@ function MovieList() {
   const handleClickedImg = (id) => {
     // console.log ('movie id is: ', id);
     // payload: movie id
-   // dispatch 'GET_MOVIE_DETAILS' sends the clicked movie id to the store
+    // This now happens on the detials page:
+        // dispatch 'GET_MOVIE_DETAILS' sends the clicked movie id to the store
    
   //sends the user to the details page after a specific movie is clicked
+  //sends the movie id as a param to the details page
   history.push(`/details/${id}`);
   }
  
