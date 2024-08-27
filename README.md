@@ -16,15 +16,19 @@ I was given a repository that rendered movie titles and their poster on the dom.
 
 ## Make a Plan
 1. I started this project by opening the given repository and looking around to understand the code I had been given.
-   ![image](https://github.com/user-attachments/assets/54617848-0e46-4720-8fc0-cf42e8fe3448)
-
 2. Next, I drew out a plan for how I wanted my pages to look, along with routes, function, and variables I would need for each page.
+ ![image](https://github.com/user-attachments/assets/54617848-0e46-4720-8fc0-cf42e8fe3448)
 3. Then, I went back to the code and added comments, showing the path the requests would make and planning my variable/function names.
 4. Finally, I started coding, making sure to use comments to explain the code I was adding.
 5. I decided to push my understanding by using Tailwind for my styling. I had never used Tailwind before so I needed to learn how to install it appropriately as well as learn the correct notation. Below are some pictures of the final result.
+   
 ![image](https://github.com/user-attachments/assets/160de9d8-cc07-4de1-9f7b-f615bd3eced1)
 
+
+
 ![image](https://github.com/user-attachments/assets/ee41e751-0b4e-47c9-9d1b-05c4ceac8491)
+
+
 
 
 ## Prerequisitesn**
@@ -34,12 +38,13 @@ I was given a repository that rendered movie titles and their poster on the dom.
 
 
 ## Installation
-1. Create a database named "saga_movies_weekend",
-2. The queries in the database.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
-3. Open up your editor of choice and run an npm install
-4. Run npm run server in your terminal
-5. Run npm run client in your terminal
-6. **The npm run client command will open up a new browser tab for you!
+1.Fork and clone this repository for your own access.
+Open up your editor of choice and run an npm install.
+2. Create a database named "saga_movies_weekend",
+3. The queries in the database.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. I recommend using Postico to run those queries as that was used to create the queries,
+5. Run npm run server in your terminal
+6. Run npm run client in your terminal
+7. Navigate to http://localhost:5173/
 
 
 ## Usage
