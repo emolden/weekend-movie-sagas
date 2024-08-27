@@ -38,10 +38,10 @@ I was given a repository that rendered movie titles and their poster on the dom.
 
 
 ## Installation
-1.Fork and clone this repository for your own access.
-Open up your editor of choice and run an npm install.
-2. Create a database named "saga_movies_weekend",
-3. The queries in the database.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. I recommend using Postico to run those queries as that was used to create the queries,
+1. Fork and clone this repository for your own access.
+2. Open up your editor of choice and run an npm install.
+3. Create a database named "saga_movies_weekend",
+4. The queries in the database.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. I recommend using Postico to run those queries as that was used to create the queries,
 5. Run npm run server in your terminal
 6. Run npm run client in your terminal
 7. Navigate to http://localhost:5173/
