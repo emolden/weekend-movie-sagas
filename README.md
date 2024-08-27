@@ -51,12 +51,11 @@ I was given a repository that rendered movie titles and their poster on the dom.
 
 
 ## Built With **
-- axios
+- node
 - express
-- pg
-- react-router
+- react
 - redux
-- redux-saga
+- saga
 - Tailwind
 
 
