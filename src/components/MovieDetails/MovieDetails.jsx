@@ -47,19 +47,21 @@ function MovieDetails () {
             </header>
             <section class='flex flex-row gap-20'>
                 <div class='flex flex-col justify-center ml-10 w-52 h-80 '>
-                    <h1 class='text-center text-1xl font-semibold tracking-wider flex flex-wrap justify-center'>{singleMovieDetails.movieTitle}</h1>
+                    <h1 class='text-xl text-center text-1xl font-semibold tracking-wider flex flex-wrap justify-center'>{singleMovieDetails.movieTitle}</h1>
                     <img class='w-max h-full text-center'src={singleMovieDetails.poster} />
                 </div>
                 <div class= 'max-w-2xl flex justify-center flex-col'>
                     <div class='ml-16 mb-6 flex flex-row gap-5'>
+                        <h4 class='text-xl'>Genres:</h4>
                         {/* forces page load to wait till redux-saga has time to fill
                         singleMovieDetails */}
                         {singleMovieDetails.movieGenres && singleMovieDetails.movieGenres.map(genre => {
                             return (
-                                <p class ='boarder-solid border-2 rounded-lg p-1 border-blue-900 bg-blue-300' key={genre.genre_id}>{genre.genre_name}</p>
+                                <p class ='boarder-solid border-2 rounded-lg p-1 border-blue-900' key={genre.genre_id}>{genre.genre_name}</p>
                             )
                         })}
                     </div>
+                    <h4 class='text-xl'>Movie Description:</h4>
                     <p>{singleMovieDetails.description}</p>
                 </div>
             </section>
