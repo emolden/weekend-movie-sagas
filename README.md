@@ -5,6 +5,7 @@
 
 ## Description
 Duration: 10 hours
+
 I was given a repository that rendered movie titles and their poster on the dom. I was tasked with getting details about a specific movie when the poster was clicked. I needed to: 
 - load the movie details on a new page.
 - make a GET request to the server and database for to receive the details for a specific movie id.
