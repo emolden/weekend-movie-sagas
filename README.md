@@ -9,7 +9,7 @@
 ## Description
 _Duration: 10 hours_
 
-I was given a repository that rendered movie titles and their poster on the dom. I was tasked with getting details about a specific movie when the poster was clicked. I needed to: 
+I was given a repository that rendered movie titles and their poster on the DOM. I was tasked with getting details about a specific movie when the poster was clicked. I needed to: 
 - load the movie details on a new page.
 - make a GET request to the server and database for to receive the details for a specific movie id.
 - refactor the data from the database to render the movie title, poster, description, and all the genres associated.
@@ -66,13 +66,6 @@ I was given a repository that rendered movie titles and their poster on the dom.
 - Redux
 - Redux-Saga
 - Tailwind
-- 'PG'
-
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/) ## Do I need this? Or a different thing here?
-
-**Note, include this only if you have a license file. GitHub will generate one for you if you want!
 
 
 ## Acknowledgement
