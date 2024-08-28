@@ -56,12 +56,14 @@ I was given a repository that rendered movie titles and their poster on the dom.
 
 
 ## Built With **
-- node
-- express
-- react
-- redux
-- saga
+- Node.js
+- Express
+- Axios
+- React.js
+- Redux
+- Redux-Saga
 - Tailwind
+- 'PG'
 
 
 ## License
