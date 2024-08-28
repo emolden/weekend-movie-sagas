@@ -3,7 +3,7 @@
 ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/emolden/weekend-movie-sagas?style=flat-square)
 ![FORKS](https://img.shields.io/github/forks/emolden/weekend-movie-sagas?style=social)
 
-# Movie Saga
+# Weekend Movie Sagas
 
 
 ## Description
