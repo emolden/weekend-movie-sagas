@@ -1,10 +1,13 @@
-(**View Raw will give you the markdown that you can copy to your repos!)
+![MIT LICENSE](https://img.shields.io/github/license/scottbromander/the_marketplace.svg?style=flat-square)
+![REPO SIZE](https://img.shields.io/github/repo-size/scottbromander/the_marketplace.svg?style=flat-square)
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/scottbromander/the_marketplace.svg?style=flat-square)
+![FORKS](https://img.shields.io/github/forks/scottbromander/the_marketplace.svg?style=social)
 
 # Movie Saga
 
 
 ## Description
-Duration: 10 hours
+_Duration: 10 hours_
 
 I was given a repository that rendered movie titles and their poster on the dom. I was tasked with getting details about a specific movie when the poster was clicked. I needed to: 
 - load the movie details on a new page.
@@ -31,7 +34,7 @@ I was given a repository that rendered movie titles and their poster on the dom.
 
 
 
-## Prerequisitesn**
+## Prerequisites
 - [Node.js](https://nodejs.org/en/)
 - [Postgres](https://www.postgresql.org/download/)
 - [Postico](https://eggerapps.at/postico/v1.php) - recommended
@@ -55,7 +58,7 @@ I was given a repository that rendered movie titles and their poster on the dom.
 - The button would bring them back to the hoempage.
 
 
-## Built With **
+## Built With
 - Node.js
 - Express
 - Axios
@@ -67,7 +70,7 @@ I was given a repository that rendered movie titles and their poster on the dom.
 
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://choosealicense.com/licenses/mit/) ## Do I need this? Or a different thing here?
 
 **Note, include this only if you have a license file. GitHub will generate one for you if you want!
 
