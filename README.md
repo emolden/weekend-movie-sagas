@@ -12,8 +12,9 @@ _Duration: 10 hours_
 I was given a repository that rendered movie titles and their poster on the DOM. I was tasked with getting details about a specific movie when the poster was clicked. I needed to: 
 - load the movie details on a new page.
 - make a GET request to the server and database for to receive the details for a specific movie id.
-- refactor the data from the database to render the movie title, poster, description, and all the genres associated.
-- use redux and sagas for my GET request and variables.
+- reshape the data from the database into sensible data structures in order to render the movie title, poster, description, and all the genres associated.
+- use redux to store global application state.
+- use sagas to fetch server-side data and deliver it to redux.
 - have a button that exists on the details page that will bring the user back to the main page with all the movies.
 
 
@@ -42,12 +43,15 @@ I was given a repository that rendered movie titles and their poster on the DOM.
 
 ## Installation
 1. Fork and clone this repository for your own access.
-2. Open up your editor of choice and run an npm install.
-3. Create a database named "saga_movies_weekend",
-4. The queries in the database.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. I recommend using Postico to run those queries as that was used to create the queries,
-5. Run npm run server in your terminal
-6. Run npm run client in your terminal
-7. Navigate to http://localhost:5173/
+2. Run an `npm install` within this repository's root directory.
+3. Create a database named `saga_movies_weekend`.
+    * This application is configured to connect to a PostgreSQL database. You'll need to create this database within a locally installed PostgreSQL instance.
+4. The queries in the `database.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly.
+   * I recommend using Postico to run those queries as that was used to create the queries
+5. Run `npm run server` in your terminal to start the Express server.
+6. Run `npm run client` in your terminal to start the Vite dev server (which servers the React app).
+7. Navigate to http://localhost:5173/.
+8.  🍿
 
 
 ## Usage
